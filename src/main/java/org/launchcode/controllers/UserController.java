@@ -1,5 +1,6 @@
 package org.launchcode.controllers;
 
+import org.launchcode.data.UserData;
 import org.launchcode.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,8 @@ public class UserController {
             return "/user/add";
         }
         model.addAttribute("user" ,user);
+        model.addAttribute("user" , UserData.getAll());
+
         return "/user/index";
     }
 
