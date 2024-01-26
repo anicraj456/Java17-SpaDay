@@ -14,7 +14,7 @@ public class UserController {
     @GetMapping("/add")
     public String displayAddUserForm(Model model) {
         model.addAttribute(new User());
-        return "user/add";
+        return "/user/add";
     }
 
     @PostMapping
@@ -24,7 +24,7 @@ public class UserController {
         //model.addAttribute("username", user.getUsername());
         //model.addAttribute("email", user.getEmail());
         if (!errors.hasErrors() && user.getPassword().equals(verify)) {
-            return "user/index";
+            return "/user/index";
         }
         else {
             model.addAttribute("error", "Passwords do not match");
